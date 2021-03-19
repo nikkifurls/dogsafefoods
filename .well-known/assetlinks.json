@@ -1,0 +1,19 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.dog_safe_foods.twa",
+    "sha256_cert_fingerprints": [
+      "57:73:04:66:7A:C2:F2:B0:8D:25:7B:BF:C8:56:89:E4:2A:D7:6C:F5:F9:CC:85:40:B8:11:EE:83:34:20:63:63"
+    ]
+  }
+}, {
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.dogsafefoods.twa",
+    "sha256_cert_fingerprints": [
+      "F2:26:49:E0:DC:CC:80:65:21:CC:F8:F5:49:EB:57:5E:FE:F7:0E:28:C0:52:E3:14:73:36:BC:43:9B:91:FC:E2"
+    ]
+  }
+}]

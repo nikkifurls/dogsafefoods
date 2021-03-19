@@ -1,0 +1,128 @@
+$color-accent-secondary: #D6CB62;
+$color-accent-secondary-dark: #B17D1F;
+
+@use "../pwa-generator/files/common" as * with (
+	$font-heading: "Roboto Slab",
+	$font-body: "Roboto",
+	$color-main: #8BCFDF,
+	$color-main-dark: #264052,
+	$color-accent: #F8B2BF,
+	$color-accent-dark: #662632
+);
+
+.index,
+.search,
+.special {
+	header h1 {
+		display: none;
+	}
+}
+
+main {
+	padding-top: 0;
+	
+	.search {
+		text-align: center;
+	
+		h2 {
+			display: none;
+		}
+
+		label {
+			grid-template-columns: none;
+			justify-content: center;
+		}
+	}
+
+	.tips {
+		li {
+			b {
+				background-color: $color-accent-dark;
+			}
+		}
+	}
+
+	.num-results {
+		background-color: $color-gray-dark;
+		font-weight: $font-bold;
+		text-align: center;
+		text-transform: uppercase;
+	}
+	
+	.results {
+		text-align: left;
+	
+		a {
+			color: $color-white;
+		}
+	}
+	
+	.result {
+		background-color: $color-gray-dark;
+		border: $space-border solid $color-gray-med;
+		border-radius: $space-border;
+		margin: $space-small 0;
+		padding: $space-xxlarge $space-super;
+		position: relative;
+	
+		@media (min-width: $media-tablet) {
+			padding: $space-xsuper $space-xxsuper;
+		}
+	
+		.share {
+			color: $color-white;
+			font-size: inherit;
+			font-size: larger;
+			position: absolute;
+			right: $space-small;
+			top: $space-xsmall;
+		}
+	
+		h3,
+		h4 {
+			color: $color-white;
+		}
+	
+		&.safe {
+			background-color: $color-main-dark;
+			border: $space-border solid $color-main;
+	
+			a {
+				color: $color-main;
+	
+				&:hover,
+				a:active {
+					color: $color-white;
+				}
+			}
+		}
+	
+		&.unsafe {
+			background-color: $color-accent-dark;
+			border: $space-border solid $color-accent;
+	
+			a {
+				color: $color-accent;
+	
+				&:hover,
+				a:active {
+					color: $color-white;
+				}
+			}
+		}
+	
+		&.caution {
+			background-color: $color-accent-secondary-dark;
+			border: $space-border solid $color-accent-secondary;
+	
+			a {
+				color: $color-accent-secondary;
+	
+				&:hover,
+				a:active {
+					color: $color-white;
+				}
+			}
+		}
+	}
+}
