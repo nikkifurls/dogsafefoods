@@ -78,19 +78,19 @@ const search = () => {
 
 const displayResults = (results = null) => {
 
-	const iconSafe = `<span role="img" title="Safe" class="icon icon-thumbsup">&#x1F44D;</span>`;
-	const iconUnsafe = `<span role="img" title="Unsafe" class="icon icon-thumbsdown">&#x1F44E;</span>`;
-	const iconCaution = `<span role="img" title="Caution" class="icon icon-caution">&#x270B;</span>`;
+	const iconSafe = `<span role="img" title="Safe" class="icon icon-thumbsup">👍</span>`;
+	const iconUnsafe = `<span role="img" title="Unsafe" class="icon icon-thumbsdown">👎</span>`;
+	const iconCaution = `<span role="img" title="Caution" class="icon icon-caution">✋</span>`;
 
 	if (results == null) {
 		searchNumResultsContainer.innerHTML = "";
 		searchResultsContainer.innerHTML = "";
 	} else if (results.length < 1) {
-		searchNumResultsContainer.innerHTML = `No Results <span role="img" title="shrug" class="icon icon-shrug">&#x1F937;</span>`;
+		searchNumResultsContainer.innerHTML = `No Results <span role="img" title="shrug" class="icon icon-shrug">🤷‍♀️</span>`;
 		searchResultsContainer.innerHTML =
 			`<div class="result">
 				<p>This food is not yet in our database. We add foods regularly, so check back soon!</p>
-				<p class="bold">Check with your veterinarian before sharing <em>any</em> food with dogs&#x2014;especially those not found in our database.</p>
+				<p class="bold">Check with your veterinarian before sharing <em>any</em> food with dogs—especially those not found in our database.</p>
 			</div>`;
 	} else {
 		searchNumResultsContainer.innerHTML = results.length + ((results.length > 1) ? "&nbsp;Results" : "&nbsp;Result");
