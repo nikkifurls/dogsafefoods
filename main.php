@@ -1,7 +1,7 @@
 <section class="search">
 	<h2>Search</h2>
 	<p>You can also search for foods that are <a href="./safe" title="Safe"><span class="icon icon-thumbsup" role="img" title="Safe">👍</span>&nbsp;safe</a>&nbsp;or&nbsp;<a href="./unsafe" title="Unsafe"><span class="icon icon-thumbsdown" role="img" title="Unsafe">👎</span>&nbsp;unsafe</a></p>
-	<p class="bold small">Read&nbsp;some&nbsp;<a href="#tips" title="Tips">tips</a>&nbsp;before sharing any food with&nbsp;dogs</p>
+	<p class="bold small">Read&nbsp;the&nbsp;<a href="#tips" title="Tips">tips</a>&nbsp;below before sharing any food with&nbsp;dogs</p>
 	<label for="search">
 		<input id="search" type="search" autofocus="true" autocomplete="off" name="search" placeholder="enter food..." value="<?php echo (isset($project_data["pages"][$page]["url"]) && ($project_data["pages"][$page]["url"] !== "index")) ? $project_data["pages"][$page]["url"] : '' ?>" />
 	</label>
