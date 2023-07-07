@@ -173,10 +173,10 @@ const shareUrl = (url = null, title = null, text = null) => {
 			text = encodeURIComponent(text + " " + url);
 		
 			showNotification(
-				`<a class="button facebook" href="https://www.facebook.com/sharer/sharer.php?u=${url}" target="_blank" rel="noopener" title="Share on Facebook"><i class="fas fa-share-alt"></i>&nbsp;&nbsp;Facebook</a>` +
-				`<a class="button twitter" href="https://twitter.com/intent/tweet?text=${text}" target="_blank" rel="noopener" title="Share on Twitter"><i class="fas fa-share-alt"></i>&nbsp;&nbsp;Twitter</a>` +
-				`<a class="button email" href="mailto:?subject=Check+out+${title}!&body=${text}" target="_blank" rel="noopener" title="Share on Email"><i class="fas fa-share-alt"></i>&nbsp;&nbsp;Email</a>` +
-				`<a class="button copy" href="#" target="_blank" rel="noopener" title="Copy" data-url="${url}"><i class="fas fa-copy"></i>&nbsp;&nbsp;Copy</button>`,
+				`<a class="button facebook" href="https://www.facebook.com/sharer/sharer.php?u=${url}" title="Share on Facebook"><i class="fas fa-share-alt"></i>&nbsp;&nbsp;Facebook</a>` +
+				`<a class="button twitter" href="https://twitter.com/intent/tweet?text=${text}" title="Share on Twitter"><i class="fas fa-share-alt"></i>&nbsp;&nbsp;Twitter</a>` +
+				`<a class="button email" href="mailto:?subject=Check+out+${title}!&body=${text}" title="Share on Email"><i class="fas fa-share-alt"></i>&nbsp;&nbsp;Email</a>` +
+				`<a class="button copy" href="#" title="Copy" data-url="${url}"><i class="fas fa-copy"></i>&nbsp;&nbsp;Copy</button>`,
 				"notification-share"
 			);
 		}
