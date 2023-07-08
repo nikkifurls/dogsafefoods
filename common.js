@@ -15,7 +15,7 @@ window.addEventListener("load", event => {
 					(paramParts !== null) && 
 					(typeof paramParts[0] !== "undefined") && 
 					(paramParts[0] !== null) &&
-					(paramParts[0] == "notification") &&
+					(paramParts[0] === "notification") &&
 					(typeof paramParts[1] !== "undefined") && 
 					(paramParts[1] !== null)
 				) {
@@ -54,9 +54,9 @@ const showNotification = (text, className = null, cookieName = null) => {
 
 				// Set text
 				if (notificationText) {
-					if (text == "paypal-confirmation") {
+					if (text === "paypal-confirmation") {
 						text = `Transaction approved! Thank you so much! <span role="img" title="Heart" class="icon icon-heart">♥</span>`;
-					} else if (text == "cookie") {
+					} else if (text === "cookie") {
 						text = `Cookies and other tracking technologies are used on this website to improve your browsing experience, analyze website traffic, and show personalized content and targeted ads. By browsing this website, you consent to the use of cookies and other tracking technologies.`;
 					}
 				
@@ -273,7 +273,7 @@ const setLinkEventListeners = () => {
 
 const decodeText = (text, type = "text") => {
 	
-	if (typeof text == "string") {
+	if (typeof text === "string") {
 		// Remove leading and trailing slashes
 		text = text.replace(/^\/|\/$/g, "");
 	
@@ -290,7 +290,7 @@ const decodeText = (text, type = "text") => {
 		text = text.replace(/%20/g, " ");
 	
 		// Change dashes to spaces, unless type=url
-		if (type == "url") {
+		if (type === "url") {
 			text = text.replace(/ /g, "-");
 		} else {
 			text = text.replace(/-/g, " ");

@@ -1,4 +1,4 @@
-const cacheName = "cache67";
+const cacheName = "cache68";
 const cacheFiles = [
 	"/",
 	"common.js",
@@ -392,7 +392,7 @@ self.addEventListener("fetch", event => {
 	const online = navigator.onLine ? true : false;
 	const blacklisted = [url.hostname].filter(hostname => cacheBlacklist.some(item => hostname.includes(item))).length ? true : false;
 	const cacheMatch = cacheFiles.find(cacheFile => cacheFile.includes(url.pathname.replace("/", "")));
-	const cacheResponse = (online && (event.request.method == "GET") && !blacklisted) ? true : false;
+	const cacheResponse = (online && (event.request.method === "GET") && !blacklisted) ? true : false;
 
 	if (!online) {
 		if (cacheMatch) {
