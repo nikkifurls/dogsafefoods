@@ -1,4 +1,4 @@
-const cacheName = "cache68";
+const cacheName = "cache69";
 const cacheFiles = [
 	"/",
 	"common.js",
