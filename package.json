@@ -1,0 +1,8 @@
+{
+	"name": "dogsafefoods.com",
+	"version": "69",
+	"description": "Sharing food with your dog? Make sure it's safe first",
+	"dependencies": {
+		"ts-loader": "^9.4.4"
+	}
+}
