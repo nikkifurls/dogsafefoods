@@ -1,19 +1,16 @@
 const cacheName = "cache69";
 const cacheFiles = [
 	"/",
-	"common.js",
+	"css/style.css",
 	"disclaimer.html",
+	"img/logo_nav.svg",
 	"index.html",
 	"manifest.json",
 	"privacy-policy.html",
 	"terms-and-conditions.html",
-	"logo_nav.svg",
-	"style.css",
-	"main.js",
 	"data.json",
-	"logo_header.svg",
-	"icon-thumbs-up.png",
-	"icon-thumbs-down.png",
+	"img/icon-thumbs-up.png",
+	"img/icon-thumbs-down.png",
 	"ads.txt",
 	"sellers.json",
 	"safe.html",
@@ -300,38 +297,39 @@ const cacheFiles = [
 	"fonts/fontawesome/webfonts/fa-solid-900.ttf",
 	"fonts/fontawesome/webfonts/fa-solid-900.woff",
 	"fonts/fontawesome/webfonts/fa-solid-900.woff2",
-	"android-chrome-36x36.png", // Favicon, Android Chrome M39+ with 0.75 screen density
-	"android-chrome-48x48.png", // Favicon, Android Chrome M39+ with 1.0 screen density
-	"android-chrome-72x72.png", // Favicon, Android Chrome M39+ with 1.5 screen density
-	"android-chrome-96x96.png", // Favicon, Android Chrome M39+ with 2.0 screen density
-	"android-chrome-144x144.png", // Favicon, Android Chrome M39+ with 3.0 screen density
-	"android-chrome-192x192.png", // Favicon, Android Chrome M39+ with 4.0 screen density
-	"android-chrome-256x256.png", // Favicon, Android Chrome M47+ Splash screen with 1.5 screen density
-	"android-chrome-384x384.png", // Favicon, Android Chrome M47+ Splash screen with 3.0 screen density
-	"android-chrome-512x512.png", // Favicon, Android Chrome M47+ Splash screen with 4.0 screen density
-	"apple-touch-icon.png", // Favicon, Apple default
-	"apple-touch-icon-57x57.png", // Apple iPhone, Non-retina with iOS6 or prior
-	"apple-touch-icon-60x60.png", // Apple iPhone, Non-retina with iOS7
-	"apple-touch-icon-72x72.png", // Apple iPad, Non-retina with iOS6 or prior
-	"apple-touch-icon-76x76.png", // Apple iPad, Non-retina with iOS7
-	"apple-touch-icon-114x114.png", // Apple iPhone, Retina with iOS6 or prior
-	"apple-touch-icon-120x120.png", // Apple iPhone, Retina with iOS7
-	"apple-touch-icon-144x144.png", // Apple iPad, Retina with iOS6 or prior
-	"apple-touch-icon-152x152.png", // Apple iPad, Retina with iOS7
-	"apple-touch-icon-180x180.png", // Apple iPhone 6 Plus with iOS8
-	"browserconfig.xml", // IE11 icon configuration file
-	"favicon.ico", // Favicon, IE and fallback for other browsers
-	"favicon-16x16.png", // Favicon, default
-	"favicon-32x32.png", // Favicon, Safari on Mac OS
-	"maskable_icon.png", // Favicon, maskable https://web.dev/maskable-icon
-	"monochrome_icon.png", // Favicon, monochrome https://web.dev/monochrome-icon
-	"mstile-70x70.png", // Favicon, Windows 8 / IE11
-	"mstile-144x144.png", // Favicon, Windows 8 / IE10
-	"mstile-150x150.png", // Favicon, Windows 8 / IE11
-	"mstile-310x150.png", // Favicon, Windows 8 / IE11
-	"mstile-310x310.png", // Favicon, Windows 8 / IE11
-	"safari-pinned-tab.svg", // Favicon, Safari pinned tab
-	"share.jpg" // Social media sharing
+	"js/bundle.b53a57d38646e9de43c6.js",
+	"img/android-chrome-36x36.png", // Favicon, Android Chrome M39+ with 0.75 screen density
+	"img/android-chrome-48x48.png", // Favicon, Android Chrome M39+ with 1.0 screen density
+	"img/android-chrome-72x72.png", // Favicon, Android Chrome M39+ with 1.5 screen density
+	"img/android-chrome-96x96.png", // Favicon, Android Chrome M39+ with 2.0 screen density
+	"img/android-chrome-144x144.png", // Favicon, Android Chrome M39+ with 3.0 screen density
+	"img/android-chrome-192x192.png", // Favicon, Android Chrome M39+ with 4.0 screen density
+	"img/android-chrome-256x256.png", // Favicon, Android Chrome M47+ Splash screen with 1.5 screen density
+	"img/android-chrome-384x384.png", // Favicon, Android Chrome M47+ Splash screen with 3.0 screen density
+	"img/android-chrome-512x512.png", // Favicon, Android Chrome M47+ Splash screen with 4.0 screen density
+	"img/apple-touch-icon.png", // Favicon, Apple default
+	"img/apple-touch-icon-57x57.png", // Apple iPhone, Non-retina with iOS6 or prior
+	"img/apple-touch-icon-60x60.png", // Apple iPhone, Non-retina with iOS7
+	"img/apple-touch-icon-72x72.png", // Apple iPad, Non-retina with iOS6 or prior
+	"img/apple-touch-icon-76x76.png", // Apple iPad, Non-retina with iOS7
+	"img/apple-touch-icon-114x114.png", // Apple iPhone, Retina with iOS6 or prior
+	"img/apple-touch-icon-120x120.png", // Apple iPhone, Retina with iOS7
+	"img/apple-touch-icon-144x144.png", // Apple iPad, Retina with iOS6 or prior
+	"img/apple-touch-icon-152x152.png", // Apple iPad, Retina with iOS7
+	"img/apple-touch-icon-180x180.png", // Apple iPhone 6 Plus with iOS8
+	"img/browserconfig.xml", // IE11 icon configuration file
+	"img/favicon.ico", // Favicon, IE and fallback for other browsers
+	"img/favicon-16x16.png", // Favicon, default
+	"img/favicon-32x32.png", // Favicon, Safari on Mac OS
+	"img/maskable_icon.png", // Favicon, maskable https://web.dev/maskable-icon
+	"img/monochrome_icon.png", // Favicon, monochrome https://web.dev/monochrome-icon
+	"img/mstile-70x70.png", // Favicon, Windows 8 / IE11
+	"img/mstile-144x144.png", // Favicon, Windows 8 / IE10
+	"img/mstile-150x150.png", // Favicon, Windows 8 / IE11
+	"img/mstile-310x150.png", // Favicon, Windows 8 / IE11
+	"img/mstile-310x310.png", // Favicon, Windows 8 / IE11
+	"img/safari-pinned-tab.svg", // Favicon, Safari pinned tab
+	"img/share.jpg" // Social media sharing
 ];
 
 // 1) INSTALL - triggers when service worker-controlled pages are accessed subsequently
