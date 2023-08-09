@@ -40,10 +40,10 @@ export const copyUrl = (url: string = window.location.href): void => {
 
 /**
  * Displays the native sharing mechanism for the device if navigator.share is available, otherwise displays a notification with the share data.
- * @param url 
- * @param title 
- * @param text 
- * @returns 
+ * 
+ * @param {string} url URL to share. Defaults to window.location.href.
+ * @param {string} title Title of website. Defaults to window.baseTitle. 
+ * @param {string} text Text to share. Defaults to window.baseDescription.
  */
 export const shareUrl = (url: string = window.location.href, title: string = window.baseTitle, text: string = window.baseDescription): void => {
 	if (navigator.share) {

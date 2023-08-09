@@ -69,8 +69,9 @@ window.addEventListener('load', async () => {
 
 /**
  * Get search results.
- * @param query Query string.
- * @returns Search results.
+ * 
+ * @param {string} query Query string.
+ * @returns {Promise<Array<SearchResult>>} Search results.
  */
 const getSearchResults = async (query: string): Promise<Array<SearchResult>> => {
 
@@ -108,9 +109,9 @@ const getSearchResults = async (query: string): Promise<Array<SearchResult>> => 
 
 /**
  * Display search results.
- * @param query Query string.
- * @param results Search results. 
- * @returns void
+ * 
+ * @param {string} query Query string.
+ * @param {Array<SearchResult>} results Search results. 
  */
 const displayResults = (query: string, results: Array<SearchResult> = []): void => {
 
