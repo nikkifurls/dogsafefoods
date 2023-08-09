@@ -1,8 +1,8 @@
 import { showNotification } from "./notifications";
 import { setLinkEventListeners } from "./urls";
 
-import '../css/index.scss';
-import '../css/style.scss';
+import '../scss/index.scss';
+import '../scss/style.scss';
 
 window.addEventListener('load', () => {
 
