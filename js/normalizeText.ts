@@ -1,0 +1,40 @@
+/**
+ * Normalize a text string.
+ * @param text 
+ * @param type 
+ * @returns 
+ */
+const normalizeText = (text: string, type: string = 'text'): string => {
+	
+	// Remove leading and trailing slashes.
+	let decodedText = text.replace(/^\/|\/$/g, '');
+
+	// Transform accented characters to their non-accented version.
+	decodedText = decodedText.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+
+	// Remove .html extension.
+	decodedText = decodedText.replace(/.html/g, ' ');
+
+	// Remove +.
+	decodedText = decodedText.replace(/\+/g, ' ');
+
+	// Remove %20.
+	decodedText = decodedText.replace(/%20/g, ' ');
+
+	// Change dashes to spaces, unless type=url.
+	if (type === 'url') {
+		decodedText = decodedText.replace(/ /g, '-');
+	} else {
+		decodedText = decodedText.replace(/-/g, ' ');
+	}
+
+	// Transform to lowercase.
+	decodedText = decodedText.toLowerCase();
+
+	// Trim whitespace.
+	decodedText = decodedText.trim();
+
+	return decodedText;
+}
+
+export default normalizeText;
