@@ -1,7 +1,8 @@
 /**
  * Set cookie.
- * @param name 
- * @param value 
+ * 
+ * @param {string} name Cookie name.
+ * @param {string|boolean} value Cookie value. Defaults to boolean true.
  */
 export const setCookie = (name: string, value: string|boolean = true): void => {
 	const date = new Date();
@@ -11,8 +12,9 @@ export const setCookie = (name: string, value: string|boolean = true): void => {
 
 /**
  * Get cookie by name.
- * @param name 
- * @returns Cookie value.
+ * 
+ * @param {string} name Cookie name.
+ * @returns {string} Cookie value.
  */
 export const getCookie = (name: string): string => {
 	const cookieValue = document.cookie.split('; ')

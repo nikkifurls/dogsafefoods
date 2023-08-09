@@ -1,8 +1,9 @@
 /**
  * Normalize a text string.
- * @param text 
- * @param type 
- * @returns 
+ * 
+ * @param {string} text Text string to normalize.
+ * @param {string} type Type of normalization to perform. Defaults to 'text'. Other possible value is 'url'.
+ * @returns {string} Normalized text string.
  */
 const normalizeText = (text: string, type: string = 'text'): string => {
 	

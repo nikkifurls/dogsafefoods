@@ -64,7 +64,7 @@ window.addEventListener('load', async () => {
 	}
 
 	// Show catsafefoods.com promo.
-	showPromo('catsafefoods', `Sharing food with your cat, too? Check out <a href='https://catsafefoods.com' target='_blank'>catsafefoods.com</a>!`);
+	showPromo(`Sharing food with your cat, too? Check out <a href='https://catsafefoods.com' target='_blank'>catsafefoods.com</a>!`, 'catsafefoods.com-promo');
 });
 
 /**

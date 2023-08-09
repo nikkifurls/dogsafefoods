@@ -6,16 +6,16 @@ import '../css/style.scss';
 
 window.addEventListener('load', () => {
 
-	// Display cookie notification
+	// Display cookie notification.
 	showNotification('cookie', 'notification-cookie');
 
-	// If URL parameters are passed in, check for notification
+	// If URL parameters are passed in, check for notification.
 	if (window.location.search) {
 		const param = window.location.search.substring(1);
 		if (param) {
 			const paramParts = param.split('=');
 
-			// If ?notification=text is set in URL, open notification
+			// If ?notification=text is set in URL, open notification.
 			if (
 					(typeof paramParts !== 'undefined') && 
 					(paramParts !== null) && 
@@ -25,7 +25,7 @@ window.addEventListener('load', () => {
 					(typeof paramParts[1] !== 'undefined') && 
 					(paramParts[1] !== null)
 				) {
-					// TO DO: add functionality to show cookie notification after notification passed in via URL
+					// @todo: add functionality to show cookie notification after notification passed in via URL.
 					showNotification(paramParts[1]);
 			}
 		}

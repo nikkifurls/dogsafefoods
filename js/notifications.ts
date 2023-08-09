@@ -1,19 +1,12 @@
 import { setCookie, getCookie } from "./cookies";
 import { setLinkEventListeners } from "./urls";
 
-// declare global {
-// 	interface Window {
-// 		baseUrl: string;
-// 		baseTitle: string;
-// 		baseDescription: string;
-// 	}
-// }
-
 /**
  * Show notification.
- * @param text 
- * @param cookieName 
- * @param className 
+ * 
+ * @param {string} text Text to display in notification. Also accepts 'paypal-confirmation' to display PayPal confirmation text, or 'cookie' to display cookie consent text.
+ * @param {string} cookieName Cookie name to set once notification is closed so that the notification does not display again for the user. Defaults to ''.
+ * @param {string} className Class name to apply to notification element. Defaults to ''.
  */
 export const showNotification = (text: string, cookieName: string = '', className: string = ''): void => {
 
@@ -48,15 +41,13 @@ export const showNotification = (text: string, cookieName: string = '', classNam
 
 		// Set notification class.
 		if (className) {
-			notificationContainer.dataset.class = className;
-			notificationContainer.classList.add(`notification ${className}`);
-		} else {
-			notificationContainer.classList.add(`notification`);
+			notificationContainer.setAttribute('data-class', className);
+			notificationContainer.classList.add(className);
 		}
 
-		// Set cookie (prevents notification from displaying again).
+		// Set cookie data attribute, which will cause the cookie to get set when the notification is closed, so that it doesn't display again for the user.
 		if (cookieName) {
-			notificationContainer.dataset.cookie = cookieName;
+			notificationContainer.setAttribute('data-cookie', cookieName);
 		}
 
 		// Set close functionality.
@@ -86,7 +77,6 @@ export const showNotification = (text: string, cookieName: string = '', classNam
 
 /**
  * Close notification.
- * @returns void
  */
 export const closeNotification = (): void => {
 
@@ -102,35 +92,33 @@ export const closeNotification = (): void => {
 	// If notification has class data attribute set, remove class after closing.
 	if (notificationContainer.dataset.class) {
 		notificationContainer.classList.remove(notificationContainer.dataset.class);
-		notificationContainer.dataset.class = '';
+		notificationContainer.removeAttribute('data-class');
 	}
 	
 	// If notification has cookie data attribute set, set cookie after closing.
 	if (notificationContainer.dataset.cookie) {
 		setCookie(notificationContainer.dataset.cookie, true);
-		notificationContainer.dataset.cookie = '';
+		notificationContainer.removeAttribute('data-cookie');
 	}
 }
 
 /**
- * @todo
- * @param cookieName 
- * @param notificationTextContainer 
- * @param customIcon 
+ * Show promo notification.
+ * 
+ * @param {string} text Text to display in notification.
+ * @param {string} cookieName Cookie name to provide to showNotification(), so that the promo does not display again for the user. Defaults to the website URL with '-promo' appended.
+ * @param {string} customIconSelector Selector for the promo icon, if one exists. If provided, the icon will be animated and a cookie will be set on click so that it only animates once.
  */
-export const showPromo = (cookieName: string, notificationTextContainer: string = '', customIcon: string = ''): void => {
+export const showPromo = (text: string, cookieName: string = `${window.baseUrl}-promo`, customIconSelector: string = 'nav .custom'): void => {
 
-	if (!cookieName) {
-		if (window.baseTitle) {
-			cookieName = `cookie-${window.baseTitle.toLowerCase()}`;
-		} else {
-			cookieName = `cookie-default`;
-		}
+	if (!text) {
+		return;
 	}
 
-	if (customIcon) {
+	// Animate custom icon and set click event listener so that it only animates once.
+	if (customIconSelector) {
 		setTimeout(() => {
-			const element = document.querySelector('nav .custom');
+			const element = document.querySelector(customIconSelector);
 
 			if (!element) {
 				return;
@@ -138,14 +126,13 @@ export const showPromo = (cookieName: string, notificationTextContainer: string 
 
 			element.classList.add('animate');
 			element.addEventListener('click', () => {
-				setCookie(cookieName, true);
+				setCookie(`${cookieName}-icon`, true);
 			});
 		}, 20000);
 	}
 
-	if (notificationTextContainer) {
-		setTimeout(() => {
-			showNotification(notificationTextContainer, cookieName);
-		}, 60000);
-	}
+	// Show the notification for the promo.
+	setTimeout(() => {
+		showNotification(text, cookieName);
+	}, 60000);
 }

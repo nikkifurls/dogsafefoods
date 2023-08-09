@@ -665,6 +665,7 @@ img {
 	&.notification-share {
 		p {
 			@extend .container-scrollable;
+			justify-content: normal;
 			padding-bottom: var(--space-xsmall);
 
 			a {
