@@ -1,7 +1,7 @@
 $color-accent-secondary: #D6CB62;
 $color-accent-secondary-dark: #B17D1F;
 
-@use "../pwagenerator/files/common" as * with (
+@use "../../pwagenerator/files/common" as * with (
 	$font-heading: "Roboto Slab",
 	$font-body: "Roboto",
 	$color-main: #8BCFDF,
