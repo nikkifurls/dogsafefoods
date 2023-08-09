@@ -1,0 +1,44 @@
+@use 'colors';
+@use 'layout';
+
+/*
+** Notifications
+*/
+.notification {
+	background-color: var(--color-gray-med);
+	border-top: var(--space-border) solid var(--color-gray-light);
+	bottom: 0;
+	color: var(--color-white);
+	display: none;
+	left: 0;
+	@include layout.padding-default(var(--space-small));
+	position: fixed;
+	right: 0;
+	z-index: 999;
+
+	&.notification-share {
+		p {
+			@extend .container-scrollable;
+			padding-bottom: var(--space-xsmall);
+
+			a {
+				display: flex;
+				align-items: center;
+			}
+		}
+	}
+
+	p {
+		margin: 0;
+		margin-right: var(--space-large);		
+	}
+
+	.container {
+		display: grid;
+		grid-template-columns: 1fr minmax(10px, 5%);
+	}
+
+	.url {
+		user-select: all;
+	}
+}

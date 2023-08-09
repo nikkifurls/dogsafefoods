@@ -1,0 +1,132 @@
+@use 'colors';
+@use 'layout';
+
+/*
+** Links, Buttons, and Forms.
+*/
+.buttons,
+label {
+	margin: var(--space-small) auto;
+}
+
+a {
+	color: var(--color-main);
+	position: relative;
+	text-decoration: none;
+
+	&:hover,
+	&:active,
+	&:focus {
+		color: var(--color-accent);
+	}
+}
+
+button,
+.button,
+input,
+select,
+textarea {
+	border: none;
+	border-radius: var(--space-border);
+	vertical-align: middle;
+}
+
+.facebook,
+.button.facebook,
+button.facebook {
+	background-color: var(--color-facebook);
+}
+
+.twitter,
+.button.twitter,
+button.twitter {
+	background-color: var(--color-twitter);
+}
+
+.patreon,
+.button.patreon,
+button.patreon {
+	background-color: var(--color-patreon);
+}
+
+.paypal,
+.button.paypal
+button.paypal {
+	background-color: var(--color-paypal);
+}
+
+.android:not(.install),
+.button.android
+button.android {
+	background-color: var(--color-android);
+}
+
+.apple:not(.install),
+.button.apple
+button.apple {
+	background-color: var(--color-apple);
+}
+
+button,
+.button,
+input[type="button"],
+input[type="submit"] {
+	background-color: var(--color-main-dark);
+	color: var(--color-white);
+	line-height: 1;
+	padding: var(--space-small) var(--space-large);
+
+	&[type=color] {
+		padding: 0;
+	}
+
+	&::-webkit-search-cancel-button {
+		cursor: pointer;
+	}
+
+	&:hover,
+	&:active,
+	&:focus {
+		background-color: var(--color-accent-dark);
+		color: var(--color-white);
+	}
+
+	&.disabled  {
+		&,
+		&:active,
+		&:hover,
+		&:focus {
+			background-color: var(--color-gray-dark);
+			color: var(--color-white);
+			cursor: not-allowed;
+			pointer-events: none;
+		}
+	}
+}
+
+button,
+.button,
+details summary,
+.close,
+.copy,
+.install,
+.share {
+	cursor: pointer;
+}
+
+input,
+textarea,
+select {
+	background-color: var(--color-white);
+	color: var(--color-gray-dark);
+	font-size: inherit;
+	padding: var(--space-small);
+}
+
+label {
+    display: grid;
+	align-content: center;
+	align-items: center;
+	justify-content: space-between;
+    grid-template-columns: minmax(10em, 25%) 1fr;
+}

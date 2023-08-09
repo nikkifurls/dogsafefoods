@@ -2,7 +2,15 @@
 	"name": "dogsafefoods.com",
 	"version": "69",
 	"description": "Sharing food with your dog? Make sure it's safe first",
+	"scripts": {
+		"build": "webpack --mode production"
+	},
 	"dependencies": {
-		"ts-loader": "^9.4.4"
+		"css-loader": "^6.8.1",
+		"sass": "^1.64.2",
+		"sass-loader": "^13.3.2",
+		"style-loader": "^3.3.3",
+		"ts-loader": "^9.4.4",
+		"webpack-cli": "^5.1.4"
 	}
 }

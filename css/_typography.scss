@@ -1,0 +1,165 @@
+@use 'fonts';
+
+/*
+** Typography
+*/
+html {
+	font-size: 100%;
+}
+
+body,
+.description {
+	font-family: var(--font-body-stack);
+}
+
+body {
+	@include fonts.font-size(var(--font-medium));
+	background-color: var(--color-gray-dark);
+	line-height: 1.4;
+}
+
+header,
+h1,
+h2,
+h3,
+h4,
+.title {
+	font-family: var(--font-heading-stack);
+	
+}
+
+h1,
+h2,
+.title {
+	line-height: 1.1;
+}
+
+h3,
+h4,
+.description {
+	line-height: 1.2;
+}
+
+h1,
+h2,
+h3,
+h4,
+.title {
+	color: var(--color-accent);
+}
+
+header,
+h1,
+h2,
+h3,
+h4,
+.title,
+.description,
+a,
+button,
+.button,
+input[type="button"],
+input[type="submit"],
+summary,
+dt {
+	font-weight: var(--font-bold);
+}
+
+blockquote,
+body,
+dd,
+dl,
+figure,
+h1,
+h2,
+h3,
+h4,
+p {
+	margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+dd {
+	margin: var(--space-small) auto;
+}
+
+dl,
+ol,
+ul {
+	dt,
+	dd,
+	li {
+		margin: var(--space-small) auto;
+	}
+}
+
+h1,
+.title {
+	@include fonts.font-size(var(--font-xsuper));
+}
+
+h2 {
+	@include fonts.font-size(var(--font-super));
+}
+
+h3,
+.description {
+	@include fonts.font-size(var(--font-xlarge));
+}
+
+h4 {
+	@include fonts.font-size(var(--font-large));
+}
+
+.social,
+button,
+.button,
+input[type="button"],
+input[type="submit"],
+textarea,
+select {
+	font-size: var(--font-large);
+}
+
+code,
+kbd,
+samp,
+pre,
+.code {
+	font-family: monospace, monospace;
+}
+
+.bold {
+	font-weight: var(--font-bold);
+}
+
+.italic {
+	font-style: italic;
+}
+
+.underline {
+	text-decoration: underline;
+}
+
+mark::before,
+mark::after {
+	clip-path: inset(100%);
+	clip: rect(1px, 1px, 1px, 1px);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+mark::before {
+	content: " [highlight start] ";
+}
+
+mark::after {
+	content: " [highlight end] ";
+}

@@ -1,6 +1,9 @@
 import { showNotification } from "./notifications";
 import { setLinkEventListeners } from "./urls";
 
+import '../css/index.scss';
+import '../css/style.scss';
+
 window.addEventListener('load', () => {
 
 	// Display cookie notification

@@ -1,0 +1,13 @@
+@use 'colors';
+
+/*
+** Icons.
+*/
+.icon,
+span[class*="icon"] {
+	vertical-align: bottom;
+}
+
+.icon-heart {
+	color: var(--color-accent);
+}
