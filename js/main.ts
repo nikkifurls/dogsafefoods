@@ -36,7 +36,7 @@ window.addEventListener('load', async () => {
 
 		const targetElement = <HTMLInputElement>event.target;
 
-		const query = targetElement?.value ?? '';
+		const query = targetElement?.value?.toLowerCase() ?? '';
 
 		// Replace spaces with dashes in query text and change URL path.
 		window.history.pushState(null, null, query ? normalizeText(query, 'url') : '/');
@@ -51,7 +51,7 @@ window.addEventListener('load', async () => {
 	// If URL path is provided, override search field contents.
 	if (window.location.pathname) {
 		// Remove file extension and slashes from query text and replace dashes with a space.
-		const query = normalizeText(window.location.pathname.replace('.html', '').replace('/', ''));
+		const query = normalizeText(window.location.pathname.replace('.html', '').replace('/', '').toLowerCase());
 
 		// Change search input value to query text.
 		searchInput.value = query;
