@@ -1,19 +1,20 @@
-const cacheName = "cache69";
+const cacheName = "cache70";
 const cacheFiles = [
 	"/",
-	"disclaimer.html",
-	"img/logo_nav.svg",
-	"index.html",
 	"manifest.json",
-	"privacy-policy.html",
-	"terms-and-conditions.html",
 	"data.json",
+	"img/logo_header.svg",
+	"img/logo_nav.svg",
 	"img/icon-thumbs-up.png",
 	"img/icon-thumbs-down.png",
 	"ads.txt",
 	"sellers.json",
 	"safe.html",
 	"unsafe.html",
+	"index.html",
+	"disclaimer.html",
+	"privacy-policy.html",
+	"terms-and-conditions.html",
 	"acai.html",
 	"alcohol.html",
 	"beer.html",
@@ -296,7 +297,7 @@ const cacheFiles = [
 	"fonts/fontawesome/webfonts/fa-solid-900.ttf",
 	"fonts/fontawesome/webfonts/fa-solid-900.woff",
 	"fonts/fontawesome/webfonts/fa-solid-900.woff2",
-	"js/bundle.39ac70de336c278db18a.js",
+	"js/bundle.4b202d80f871828cb27a.js",
 	"img/android-chrome-36x36.png", // Favicon, Android Chrome M39+ with 0.75 screen density
 	"img/android-chrome-48x48.png", // Favicon, Android Chrome M39+ with 1.0 screen density
 	"img/android-chrome-72x72.png", // Favicon, Android Chrome M39+ with 1.5 screen density
