@@ -293,6 +293,10 @@ section {
 			align-items: center;
 		}
 
+		&:has(.nav) {
+			grid-template-columns: minmax(250px, 25%) 1fr 1fr;
+		}
+
 		a {
 			padding: var(--space-xsmall);
 		}
@@ -312,6 +316,19 @@ section {
 				img {
 					width: 100%;
 				}
+			}
+		}
+
+		.nav {
+			align-items: center;
+			display: flex;
+			gap: 10px;
+			list-style: none;
+			margin: 0;
+			padding: 0;
+
+			li {
+				margin: 0;
 			}
 		}
 
