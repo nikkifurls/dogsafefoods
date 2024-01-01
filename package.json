@@ -1,6 +1,6 @@
 {
 	"name": "dogsafefoods.com",
-	"version": "72",
+	"version": "73",
 	"description": "Sharing food with your dog? Make sure it's safe first",
 	"scripts": {
 		"build": "webpack --mode production"

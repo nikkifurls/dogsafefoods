@@ -39,41 +39,49 @@ window.addEventListener('load', async () => {
 		const query = targetElement?.value?.toLowerCase() ?? '';
 
 		// Replace spaces with dashes in query text and change URL path.
-		window.history.pushState(null, null, query ? normalizeText(query, 'url') : '/');
+		window.history.pushState(null, null, query ? normalizeText({ text: query, type: 'url' }) : '/');
 
 		// Get search results.
-		const results = await getSearchResults(query);
+		const results = await getSearchResults({ query });
 
 		// Display search results.
-		displayResults(query, results);
+		displayResults({ query, results });
 	});
 
 	// If URL path is provided, override search field contents.
 	if (window.location.pathname) {
 		// Remove file extension and slashes from query text and replace dashes with a space.
-		const query = normalizeText(window.location.pathname.replace('.html', '').replace('/', '').toLowerCase());
+		const query = normalizeText({ text: window.location.pathname.replace('.html', '').replace('/', '').toLowerCase() });
 
 		// Change search input value to query text.
 		searchInput.value = query;
 
 		// Get search results.
-		const results = await getSearchResults(query);
+		const results = await getSearchResults({ query });
 
 		// Display search results.
-		displayResults(query, results);
+		displayResults({ query, results });
 	}
 
 	// Show catsafefoods.com promo.
-	showPromo(`Sharing food with your cat, too? Check out <a href='https://catsafefoods.com' target='_blank'>catsafefoods.com</a>!`, 'catsafefoods.com-promo');
+	showPromo({
+        text: `Sharing food with your cat, too? Check out <a href='https://catsafefoods.com' target='_blank'>catsafefoods.com</a>!`,
+        cookieName: 'catsafefoods.com-promo',
+    });
 });
 
 /**
  * Get search results.
  * 
- * @param {string} query Query string.
+ * @param {Object} getSearchResultsData Data for the search results to get.
+ * @param {string} getSearchResultsData.query Query string.
  * @returns {Promise<Array<SearchResult>>} Search results.
  */
-const getSearchResults = async (query: string): Promise<Array<SearchResult>> => {
+const getSearchResults = async ({
+    query,
+}: {
+    query: string,
+}): Promise<Array<SearchResult>> => {
 
 	if (!query) {
 		return [];
@@ -98,9 +106,9 @@ const getSearchResults = async (query: string): Promise<Array<SearchResult>> => 
 		if (query == 'safe' || query == 'caution' || query == 'unsafe') {
 			return result.edible.toLowerCase() == query;
 		} else if (query.length < 4) {
-			return result.title.some(title => normalizeText(title).startsWith(query));
+			return result.title.some(title => normalizeText({ text: title }).startsWith(query));
 		} else {
-			return result.title.some(title => normalizeText(title).includes(query));
+			return result.title.some(title => normalizeText({ text: title }).includes(query));
 		}
 	});
 
@@ -110,10 +118,17 @@ const getSearchResults = async (query: string): Promise<Array<SearchResult>> => 
 /**
  * Display search results.
  * 
- * @param {string} query Query string.
- * @param {Array<SearchResult>} results Search results. 
+ * @param {Object} displayResultsData Data for the search results to display.
+ * @param {string} displayResultsData.query Query string.
+ * @param {Array<SearchResult>} displayResultsData.results Search results. Defaults to empty array.
  */
-const displayResults = (query: string, results: Array<SearchResult> = []): void => {
+const displayResults = ({
+    query,
+    results = [],
+}: {
+    query: string,
+    results?: Array<SearchResult>,
+}): void => {
 
 	const searchNumResultsContainer = <HTMLElement>document.querySelector(`.search .num-results`);
 	const searchResultsContainer = <HTMLElement>document.querySelector(`.search .results`);
@@ -153,7 +168,7 @@ const displayResults = (query: string, results: Array<SearchResult> = []): void 
 				const subtitle = result.title.length <= 3 ? '' : result.title.slice(1).join(', ') + ', etc.';
 
 				// Set up the URL and text for sharing.
-				const shareUrl = window.baseUrl + '/' + normalizeText(result.title[0], 'url');
+				const shareUrl = window.baseUrl + '/' + normalizeText({ text: result.title[0], type: 'url' });
 				const shareText = result.content.replace(/(<strong>|<\/strong>)/g, '');
 
 				searchResultsContainer.innerHTML +=
